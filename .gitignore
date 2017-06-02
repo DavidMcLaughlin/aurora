@@ -31,3 +31,4 @@
 /requirements.txt
 /third_party/
 /node_modules
+bundle.js*

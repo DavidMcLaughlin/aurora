@@ -1,11 +1,17 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default () => (
-  <div>
-    <ul>
-      <li><Link to="/scheduler">Home</Link></li>
-      <li><Link to="/scheduler/test">Test</Link></li>
-    </ul>
-  </div>
-)
+  <nav className='navbar navbar-default'>
+    <div className='container'>
+      <div className='navbar-header'>
+        <a className='navbar-brand' href='#'>
+          <img alt='Brand' src='/assets/images/aurora_logo.png' />
+        </a>
+      </div>
+      <ul className='nav navbar-nav'>
+        <li><Link to='/updates'>updates</Link></li>
+      </ul>
+    </div>
+  </nav>
+);

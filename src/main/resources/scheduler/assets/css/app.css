@@ -471,3 +471,23 @@ span.loading {
 .clickable {
   cursor: pointer
 }
+
+
+/*
+
+
+    Aurora UI 2.0
+
+
+ */
+.nav-divider {
+  background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+  height: 3px;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+.navbar img {
+  height: 25px;
+}
+

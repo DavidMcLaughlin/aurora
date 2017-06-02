@@ -1,13 +1,13 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { shallow } from 'enzyme';
 
 import HomePage, { RoleList } from '../HomePage';
 import Loading from '../Loading';
 
 function createMockApi(roles = null) {
   const api = jest.fn();
-  if (roles != null) {
-    api.getRoleSummary = (callback) => callback({
+  if (roles !== null) {
+    api.getRoleSummary = (handler) => handler({
       result: {
         roleSummaryResult: {
           summaries: roles
@@ -15,7 +15,7 @@ function createMockApi(roles = null) {
       }
     });
   } else {
-    api.getRoleSummary = (callback) => { };
+    api.getRoleSummary = (handler) => { };
   }
   return api;
 }
@@ -31,6 +31,6 @@ describe('HomePage suite', () => {
   it('should show a role list', () => {
     const home = shallow(<HomePage api={createMockApi(roles)} />);
     expect(home.contains(<Loading />)).toBe(false);
-    expect(home.contains(<RoleList roles={roles}/>)).toBe(true);
-  })
-})
+    expect(home.contains(<RoleList roles={roles} />)).toBe(true);
+  });
+});
