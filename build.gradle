@@ -16,6 +16,7 @@ import org.gradle.api.JavaVersion
 
 plugins {
   id 'com.eriwen.gradle.js' version '1.12.1'
+  id "com.moowork.node" version "1.1.1"
   id 'com.github.ben-manes.versions' version '0.11.3'
   id 'com.github.hierynomus.license' version '0.11.0'
   id 'me.champeau.gradle.jmh' version '0.2.0'
@@ -447,6 +448,11 @@ pmdTest {
   ruleSetFiles = files('config/pmd/common.xml', 'config/pmd/test.xml')
 }
 
+task webpack(type: com.moowork.gradle.node.task.NodeTask, dependsOn: 'npmInstall') {
+  script = project.file('node_modules/.bin/webpack')
+}
+tasks.processResources.dependsOn(webpack)
+
 /**
  * There is a jshint target recommended in the README for gradle-js-plugin
  * but it does not work. This workaround from here:
@@ -479,7 +485,6 @@ task jsHint(type:com.eriwen.gradle.js.tasks.JsHintTask) {
     'Thrift': true
   ]
 }
-tasks.checkstyleMain.dependsOn(jsHint)
 
 tasks.withType(Test) {
   maxParallelForks = Runtime.runtime.availableProcessors()
