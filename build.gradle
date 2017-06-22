@@ -27,6 +27,7 @@ apply plugin: 'checkstyle'
 apply plugin: 'findbugs'
 apply plugin: 'jacoco'
 apply plugin: 'pmd'
+apply plugin: 'com.moowork.node'
 
 def minJavaVersion = JavaVersion.VERSION_1_8;
 
@@ -446,6 +447,10 @@ pmdMain {
 
 pmdTest {
   ruleSetFiles = files('config/pmd/common.xml', 'config/pmd/test.xml')
+}
+
+node {
+  download = true
 }
 
 task webpack(type: com.moowork.gradle.node.task.NodeTask, dependsOn: 'npmInstall') {

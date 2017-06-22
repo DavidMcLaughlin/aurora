@@ -480,14 +480,494 @@ span.loading {
 
 
  */
+html, html a {
+  -webkit-font-smoothing: antialiased !important;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+html, body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.flex-tabs {
+  display: flex;
+  color: #999;
+}
+
+.flex-tabs .tab, .flex-tabs .filler {
+  border-bottom: 1px solid #EEE;
+  padding: 5px 15px;
+}
+
+.flex-tabs .active {
+  border-bottom: 1px solid steelblue;
+  color: steelblue;
+}
+
+.two-column-flex {
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.flex-panel, .flex-panel-fluid {
+  border-bottom: 1px solid #EEE;
+}
+
+.flex-panel {
+  padding: 5px 15px;
+}
+
+.flex-panel-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.two-column-flex > .main-column {
+  width: 66%;
+  border-right: 1px solid #EEE;
+}
+
+.two-column-flex > .small-column {
+  width: 34%;
+}
+
 .nav-divider {
-  background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
   height: 3px;
   margin-top: -20px;
-  margin-bottom: 20px;
+  background-color: #222;
+}
+
+.navbar {
+  text-transform: uppercase;
+  font-size: 11px;
+  min-height: 80px;
+  border-radius: 0px;
+  background-color: #222;
+}
+
+.navbar-nav>li>a {
+  line-height: 50px;
+  font-size: 14px;
+  color: #FFF;
 }
 
 .navbar img {
-  height: 25px;
+  height: 50px;
 }
 
+.page-title h1, h2, h3 {
+  margin: 0;
+}
+
+.page-title {
+  padding: 1.5em 0;
+  border-bottom: 1px solid #EEE;
+}
+
+.page-title h1 {
+  font-size: 14px;
+  color: #999;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+.page-title h2 {
+  font-size: 20px;
+}
+
+.aurora-breadcrumb a:last-child {
+  font-weight: 700;
+}
+
+.aurora-breadcrumb span {
+  margin: 0 8px;
+}
+
+.secondary-title {
+  background-color: rgba(230, 239, 247, 0.28);
+  border-bottom: 1px solid #EEE;
+  padding: 10px 0;
+  color: #626a86;
+}
+
+.secondary-title h2 {
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+/* Page Elements */
+
+table a {
+  font-weight: 500;
+}
+
+.reactable-data {
+  border: 1px solid #CCC;
+}
+
+.reactable-data tr {
+  border-top: 1px solid #DDD;
+}
+
+.reactable-data tr + tr {
+  border-top: 1px solid #EEE;
+}
+
+.reactable-data td {
+  border-left: 1px solid #DDD;
+}
+
+.reactable-data td + td {
+  border-left: 1px solid #EEE;
+}
+
+.aurora-table {
+  width: 100%;
+}
+
+.aurora-table .number {
+  text-align: center;
+}
+
+.aurora-table th {
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 5px 5px;
+}
+
+.reactable-data tr:nth-child(even) {
+  background: rgba(0,0,0,0.017);
+}
+
+.reactable-data tr:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+.reactable-data td,
+.reactable-data th {
+  padding: 5px 5px;
+}
+
+.flex-panel-fluid .reactable-data td,
+.flex-panel-fluid .aurora-table th {
+  padding: 5px 15px;
+}
+
+.flex-panel-fluid .reactable-data {
+  border: 0px;
+}
+
+.reactable-pagination td {
+  padding: 2em 0 4em 0;
+  text-align: center;
+}
+
+.reactable-pagination a {
+  padding: 6px 12px;
+  border: 1px solid #DDD;
+  border-left: 0px;
+}
+
+.reactable-pagination a:first-child {
+  padding: 6px 12px;
+  border-left: 1px solid #DDD;
+}
+
+.reactable-pagination a:hover {
+  background-color: steelblue;
+  border: 1px solid #FFF;
+  color: white;
+}
+
+.reactable-current-page {
+  font-weight: normal;
+  color: #222;
+}
+
+/*  Job List */
+.job-task-stats {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.filler {
+  flex-grow: 1;
+}
+
+.job-task-stats li {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 11px;
+}
+
+.job-task-stats .img-circle {
+  width: 10px;
+  height: 10px;
+  background-color: #CCC;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.pending-task {
+  background-color: #fbe802 !important;
+}
+
+.active-task {
+  background-color: #82b382 !important;
+}
+
+.failed-task {
+  background-color: #d85d5d!important;
+}
+
+.job-list-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.job-list-item:hover {
+  background-color: #EEE;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+}
+
+
+.job-list-item h4 {
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 16px;
+  padding: 3px;
+}
+
+.job-list-item .glyphicon {
+  font-size: 14px;
+}
+
+.job-list-item h4, .job-env, .job-tier, .job-type {
+  margin-right: 10px;
+}
+
+.job-env {
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.job-tier {
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #777;
+  padding: 2px;
+}
+
+.job-type {
+  font-size: 11px;
+  text-transform: uppercase;
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+  color: #999;
+}
+
+/*  Task List */
+.task-list {
+  width: 100%;
+}
+
+.task-list tr {
+  border-bottom: 1px solid #EEE;
+}
+
+.task-list tr:hover {
+  background-color: #EEE;
+}
+
+.task-list-instance {
+  font-size: 20px;
+  font-weight: 800;
+  width: 10px;
+  text-align: center;
+  padding: 5px 15px;
+}
+
+.task-list-status {
+  width: 99%;
+}
+
+.task-list-status h4 {
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.task-list-status small {
+  display: block;
+}
+
+.task-list-host {
+  white-space: nowrap;
+}
+
+.task-list-host a {
+  font-family: Consolas, Courier;
+  font-size: 11px;
+  padding: 0px 6px;
+  display: block;
+}
+
+
+/* Task Event List */
+.task-events {
+  position: relative;
+  margin-top: 20px;
+  padding-left: 120px;
+}
+
+.task-events svg {
+  width: 15px;
+  height: 15px;
+  margin-left: -4px;
+  margin-right: 5px;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.task-event-list-bullet {
+  fill: #EEE;
+  stroke: #CCC;
+  stroke-width: 2;
+}
+
+.task-events ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-events li {
+  margin: 20px 0px;
+  position: relative;
+  color: #888;
+}
+
+.task-events .active {
+  color: #222 !important;
+}
+
+.task-event-details {
+  display: inline-block;
+}
+
+.task-event-time {
+  font-size: 11px;
+  color: #999;
+  position: absolute;
+  left: -120px;
+  text-align: right;
+}
+
+.task-events ul:before {
+  position: absolute;
+  top: 10px;
+  bottom: 25px;
+  z-index: -1;
+  display: block;
+  width: 3px;
+  content: "";
+  background-color: #FFF;
+}
+
+.active.okay .task-event-list-bullet {
+  fill: #afe8b8;
+  stroke: #74C080;
+}
+
+.active.attention .task-event-list-bullet {
+  fill: #f3bc88;
+  stroke: #FA9F47;
+}
+
+.active.error .task-event-list-bullet {
+  fill: #e88383;
+  stroke: #D64242;
+}
+
+.active.system .task-event-list-bullet {
+  fill: #ccc;
+  stroke: #999;
+}
+
+.task-events ul.okay:before {
+  background: linear-gradient(#CCC, #CCC, #74C080);
+}
+
+.task-events ul.attention:before {
+  background: linear-gradient(#CCC, #CCC, #FA9F47);
+}
+
+.task-events ul.error:before {
+  background: linear-gradient(#CCC, #CCC, #D64242)
+}
+
+.task-events ul.system:before {
+  background: linear-gradient(#CCC, #CCC, #999)
+}
+
+.task-event-status {
+  font-size: 14px;
+  font-weight: 500;
+  width: 100px;
+  display: inline-block;
+}
+
+.task-event-message {
+  display: block;
+  font-size: 12px;
+  color: #999;
+}
+
+
+/* Instance Page */
+.active-task-details, .active-task-history {
+  padding: 20px 0;
+}
+
+.active-task-details h5, .task-details-title {
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 3px;
+  font-weight: 700;
+}
+
+.active-task-details code {
+  background-color: white;
+  color: #555;
+  padding: 0;
+}
+
+.active-task-details a {
+  display: block;
+  line-height: 1em;
+  margin-bottom: 20px;
+}
+
+.psuedo-table {
+  width: 100%;
+}
+
+.psuedo-table tr {
+  border-bottom: 1px solid #EEE;
+}
+
+.task-event-container {
+  display: flex;
+  flex-direction: row;
+}

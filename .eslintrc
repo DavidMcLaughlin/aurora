@@ -25,6 +25,7 @@
     "wrap-iife": [2, "outside"],
     // overrides of the standard-react style
     "react/jsx-sort-props": 2,
+    "react/prop-types": 0,
     "react/sort-prop-types": 2,
     "camelcase": [2, {"properties": "never"}],
   }

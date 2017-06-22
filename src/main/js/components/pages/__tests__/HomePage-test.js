@@ -1,8 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
+import Breadcrumb from '../../Breadcrumb';
 import HomePage, { RoleList } from '../HomePage';
-import Loading from '../Loading';
+import Loading from '../../Loading';
+
+const TEST_CLUSTER = 'test-cluster';
 
 function createMockApi(roles = null) {
   const api = jest.fn();
@@ -12,6 +15,9 @@ function createMockApi(roles = null) {
         roleSummaryResult: {
           summaries: roles
         }
+      },
+      serverInfo: {
+        clusterName: TEST_CLUSTER
       }
     });
   } else {
@@ -31,6 +37,7 @@ describe('HomePage suite', () => {
   it('should show a role list', () => {
     const home = shallow(<HomePage api={createMockApi(roles)} />);
     expect(home.contains(<Loading />)).toBe(false);
+    expect(home.contains(<Breadcrumb cluster={TEST_CLUSTER} />)).toBe(true);
     expect(home.contains(<RoleList roles={roles} />)).toBe(true);
   });
 });
