@@ -1,0 +1,21 @@
+div.instance-events {
+  .update-instance-event {
+    text-transform: uppercase;
+    padding: 5px 0;
+    border-top: 1px solid $grid_color;
+
+    .update-instance-event-id {
+      font-weight: 700;
+      margin-right: 10px;
+    }
+
+    .update-instance-event-time {
+      float: right;
+      color: $secondary_font_color;
+    }
+  }
+}
+
+.update-settings {
+  text-transform: uppercase;
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Table, Tr, Thead, Th, Td } from 'reactable';
 
-import { invert } from '../util/Utils';
+import { invert } from 'util/Utils';
 
 const UPDATE_STATUS = invert(JobUpdateStatus);
 

@@ -10,17 +10,17 @@ function chunk(arr, length) {
 
 const DIMENSIONS ={
   BIG: {
-    height: 20, width: 12, margin: 2
+    height: 20, width: 10, margin: 2
   },
   MEDIUM: {
-    height: 8, width: 4, margin: 2
+    height: 12, width: 6, margin: 2
   },
   SMALL: {
-    height: 5, width: 2, margin: 2
+    height: 6, width: 3, margin: 2
   }
 };
 
-export default class InstanceViz extends React.Component {
+class InstanceVizCanvas extends React.Component {
   componentDidMount() {
     // this.refs.canvas.getContext('2d').canvas.width = this.refs.container.width;
     this.refs.canvas.width = this.refs.container.offsetWidth;
@@ -63,3 +63,15 @@ export default class InstanceViz extends React.Component {
     return <div ref="container"><canvas ref="canvas" width={300} height={300} /></div>;
   }
 }
+
+const InstanceVizHTML = ({ instances }) => {
+  const className = (instances.length > 1000)
+    ? 'small'
+    : (instances.length > 100) ? 'medium' : 'big';
+
+  return (<ul className={`instance-grid ${className}`}>
+    {instances.map((i) => (<li className={i.className} />))}
+  </ul>);
+};
+
+export default InstanceVizHTML;

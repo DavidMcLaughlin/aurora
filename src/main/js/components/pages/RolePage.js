@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Breadcrumb from '../Breadcrumb';
-import JobList from '../JobList';
-import { TwoColumnLayout } from '../Layout';
-import Loading from '../Loading';
-import RoleQuota from '../RoleQuota';
+import Breadcrumb from 'components/Breadcrumb';
+import JobList from 'components/JobList';
+import { TwoColumnLayout } from 'components/Layout';
+import Loading from 'components/Loading';
+import RoleQuota from 'components/RoleQuota';
 
 export default class RolePage extends React.Component {
   constructor(props) {

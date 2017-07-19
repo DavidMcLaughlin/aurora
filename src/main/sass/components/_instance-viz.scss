@@ -1,0 +1,39 @@
+.instance-grid {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+  overflow: hidden;
+
+  li {
+    padding: 0;
+    float: left;
+    margin-right: 2px;
+    margin-bottom: 2px;
+  }
+
+  .instance-id {
+    visibility: hidden;
+  }
+
+  &:after {
+    clear: both;
+    content: '#';
+    visibility: hidden;
+  }
+}
+
+.instance-grid.small li {
+  width: 3px;
+  height: 6px;
+}
+
+.instance-grid.medium li {
+  width: 6px;
+  height: 12px;
+}
+
+.instance-grid.big li {
+  width: 15px;
+  height: 25px;
+}

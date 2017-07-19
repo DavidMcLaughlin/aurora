@@ -1,6 +1,9 @@
 var path = require('path');
 var webpack = require('webpack');
 
+var SOURCE_PATH = path.resolve(__dirname, 'src/main/js');
+var EXTENSION_PATH = path.resolve(__dirname, 'plugin/js')
+
 module.exports = {
   devtool: 'source-map',
   entry: './src/main/js/index',
@@ -10,13 +13,26 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
-    extensions: [ '.js' ]
+    extensions: [ '.js' ],
+    modules: [EXTENSION_PATH, SOURCE_PATH, 'node_modules']
   },
   module: {
-    loaders: [{
-      test: /\.js?$/,
-      loaders: ['babel-loader'],
-      include: path.resolve(__dirname, 'src/main/js')
+    rules: [{
+        test: /\.js?$/,
+        loaders: ['babel-loader'],
+        include: [EXTENSION_PATH, SOURCE_PATH]
+      }, {
+      test: /\.scss$/,
+      use: [{
+        loader: 'style-loader'
+      }, {
+        loader: 'css-loader'
+      }, {
+        loader: 'sass-loader',
+        options: {
+          includePaths: [path.resolve(__dirname, 'src/main/sass')]
+        }
+      }]
     }]
   }
 };

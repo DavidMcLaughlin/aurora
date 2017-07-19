@@ -1,5 +1,7 @@
 import React from 'react';
 
+export const ContentPanel = ({ children }) => <div className='content-panel'>{children}</div>;
+
 const Layout = (props) => (
   <div>
     {props.nav}
@@ -43,6 +45,11 @@ export class Tabs extends React.Component {
     </div>);
   }
 }
+
+export const ContentBox = ({ children, title }) => (<div className='content-box'>
+  <h3 className='content-box-title'>{title}</h3>
+  {children}
+</div>);
 
 export const TwoColumnLayout = (props) => (<div className='two-column-flex'>
   <div className='main-column'>{props.left}</div>

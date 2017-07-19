@@ -1,0 +1,37 @@
+{
+  "responseCode": 1,
+  "serverInfo": {
+    "clusterName": "atla",
+    "statsUrlPrefix": "https://observe.twitter.biz/viz/dashboards/mesos-container-stats?zone=atla#source=sd."
+  },
+  "result": {
+    "populateJobResult": null,
+    "scheduleStatusResult": null,
+    "getJobsResult": null,
+    "getQuotaResult": null,
+    "listBackupsResult": null,
+    "startMaintenanceResult": null,
+    "drainHostsResult": null,
+    "queryRecoveryResult": null,
+    "maintenanceStatusResult": null,
+    "endMaintenanceResult": null,
+    "roleSummaryResult": null,
+    "jobSummaryResult": null,
+    "configSummaryResult": null,
+    "getPendingReasonResult": {
+      "reasons": [
+        {
+          "taskId": "mesos-prod-service-proxy-5-d4ee423c-2657-4305-b41f-be5b2ca27d43",
+          "reason": "Constraint not satisfied: dedicated"
+        }
+      ]
+    },
+    "startJobUpdateResult": null,
+    "getJobUpdateSummariesResult": null,
+    "getJobUpdateDetailsResult": null,
+    "pulseJobUpdateResult": null,
+    "getJobUpdateDiffResult": null,
+    "getTierConfigResult": null
+  },
+  "details": []
+}

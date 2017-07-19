@@ -1,0 +1,56 @@
+.content-box {
+  background-color: $content_box_color;
+  margin: 10px 0;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid $grid_color;
+  border-bottom: 2px solid $grid_highlight_color;
+
+  .content-box-title {
+    font-weight: $heavy;
+    text-transform: uppercase;
+
+    .glyphicon {
+      font-size: 0.8em;
+    }
+  }
+
+  .content-box-banner {
+    .content-box-banner-text {
+      background-color: $grid_color;
+      padding: 15px 10px;
+      margin-left: -40px;
+      width: 112%;
+      display: block;
+      margin-top: -15px;
+      color: white;
+
+      font-weight: $heavy;
+      text-transform: uppercase;
+      font-size: 24px;
+
+      .glyphicon {
+        font-size: 0.8em;
+      }
+    }
+
+    &:after {
+      content: "";
+      width: 0;
+      height: 0;
+      display: block;
+      margin-left: -40px;
+      border-width: 0 20px 12px 0;
+      border-color: transparent $grid_color transparent transparent;
+      border-style: solid;
+    }
+  }
+
+
+  .content-box-subtitle {
+    font-weight: $heavy;
+    color: $secondary_font_color;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+}

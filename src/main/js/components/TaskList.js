@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Table, Tr, Thead, Th, Td } from 'reactable';
 
-import Panel from './Panel';
-import TaskEvents, { TaskEventToggle } from './TaskEvents';
-import { invert } from '../util/Utils';
+import Panel from 'components/Panel';
+import TaskEvents, { TaskEventToggle } from 'components/TaskEvents';
+import { invert } from 'util/Utils';
 
 const SCHEDULE_STATUS = invert(ScheduleStatus);
 

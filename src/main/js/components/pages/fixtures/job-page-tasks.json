@@ -1,0 +1,1315 @@
+{
+  "responseCode": 1,
+  "serverInfo": {
+    "clusterName": "atla",
+    "statsUrlPrefix": "https://observe.twitter.biz/viz/dashboards/mesos-container-stats?zone=atla#source=sd."
+  },
+  "result": {
+    "populateJobResult": null,
+    "scheduleStatusResult": {
+      "tasks": [
+        {
+          "assignedTask": {
+            "taskId": "mesos-prod-service-proxy-0-8981c4ab-cbc1-498f-8c7c-0d2c00ee8242",
+            "slaveId": "57327b65-464f-4f4d-9022-3921bf894125-S10012",
+            "slaveHost": "atla-abn-34-sr1.prod.twttr.net",
+            "task": {
+              "job": {
+                "role": "mesos",
+                "environment": "prod",
+                "name": "service-proxy"
+              },
+              "owner": {
+                "user": "jenkins"
+              },
+              "isService": true,
+              "numCpus": 0,
+              "ramMb": 0,
+              "diskMb": 0,
+              "priority": 0,
+              "maxTaskFailures": 1,
+              "production": true,
+              "tier": "preferred",
+              "resources": [
+                {
+                  "numCpus": 8,
+                  "ramMb": null,
+                  "diskMb": null,
+                  "namedPort": null,
+                  "numGpus": null
+                },
+                {
+                  "numCpus": null,
+                  "ramMb": null,
+                  "diskMb": 20480,
+                  "namedPort": null,
+                  "numGpus": null
+                },
+                {
+                  "numCpus": null,
+                  "ramMb": null,
+                  "diskMb": null,
+                  "namedPort": "health",
+                  "numGpus": null
+                },
+                {
+                  "numCpus": null,
+                  "ramMb": 20480,
+                  "diskMb": null,
+                  "namedPort": null,
+                  "numGpus": null
+                }
+              ],
+              "constraints": [
+                {
+                  "name": "host",
+                  "constraint": {
+                    "value": null,
+                    "limit": {
+                      "limit": 1
+                    }
+                  }
+                },
+                {
+                  "name": "dedicated",
+                  "constraint": {
+                    "value": {
+                      "negated": false,
+                      "values": [
+                        "mesos/service-proxy"
+                      ]
+                    },
+                    "limit": null
+                  }
+                },
+                {
+                  "name": "rack",
+                  "constraint": {
+                    "value": null,
+                    "limit": {
+                      "limit": 5
+                    }
+                  }
+                }
+              ],
+              "requestedPorts": [],
+              "mesosFetcherUris": [],
+              "taskLinks": {
+                "health": "http://%host%:%port:health%"
+              },
+              "contactEmail": null,
+              "executorConfig": null,
+              "metadata": [
+                {
+                  "key": "package",
+                  "value": "observe/absorber-release version:99 universion:v94 gitsha:f11d7725b4b503217472957c7e229bf62cb2b8f6 repo:https://git.twitter.biz/ro/source branch:origin/master"
+                },
+                {
+                  "key": "package",
+                  "value": "aurora/service-proxy version:25 universion:v23 gitsha:16634492bfd24f148b261fdc97b1b50e6dae511b repo:https://git.twitter.biz/ro/source branch:origin/master"
+                }
+              ],
+              "container": {
+                "mesos": {
+                  "image": null,
+                  "volumes": []
+                },
+                "docker": null
+              }
+            },
+            "assignedPorts": {
+              "health": 31894
+            },
+            "instanceId": 0
+          },
+          "status": 2,
+          "failureCount": 0,
+          "taskEvents": [
+            {
+              "timestamp": 1498504231639,
+              "status": 0,
+              "message": null,
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            },
+            {
+              "timestamp": 1498504231650,
+              "status": 9,
+              "message": null,
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            },
+            {
+              "timestamp": 1498504233206,
+              "status": 1,
+              "message": "Initializing sandbox.",
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            },
+            {
+              "timestamp": 1498504245597,
+              "status": 2,
+              "message": "Task is healthy.",
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            }
+          ],
+          "ancestorId": null
+        },
+        {
+          "assignedTask": {
+            "taskId": "mesos-prod-service-proxy-2-fea86954-cb2d-48d8-b296-488329598f6f",
+            "slaveId": "347de088-5820-4e08-9166-11807dfb445e-S7162",
+            "slaveHost": "atla-abo-19-sr1.prod.twttr.net",
+            "task": {
+              "job": {
+                "role": "mesos",
+                "environment": "prod",
+                "name": "service-proxy"
+              },
+              "owner": {
+                "user": "jenkins"
+              },
+              "isService": true,
+              "numCpus": 0,
+              "ramMb": 0,
+              "diskMb": 0,
+              "priority": 0,
+              "maxTaskFailures": 1,
+              "production": true,
+              "tier": "preferred",
+              "resources": [
+                {
+                  "numCpus": 8,
+                  "ramMb": null,
+                  "diskMb": null,
+                  "namedPort": null,
+                  "numGpus": null
+                },
+                {
+                  "numCpus": null,
+                  "ramMb": null,
+                  "diskMb": 20480,
+                  "namedPort": null,
+                  "numGpus": null
+                },
+                {
+                  "numCpus": null,
+                  "ramMb": null,
+                  "diskMb": null,
+                  "namedPort": "health",
+                  "numGpus": null
+                },
+                {
+                  "numCpus": null,
+                  "ramMb": 20480,
+                  "diskMb": null,
+                  "namedPort": null,
+                  "numGpus": null
+                }
+              ],
+              "constraints": [
+                {
+                  "name": "host",
+                  "constraint": {
+                    "value": null,
+                    "limit": {
+                      "limit": 1
+                    }
+                  }
+                },
+                {
+                  "name": "dedicated",
+                  "constraint": {
+                    "value": {
+                      "negated": false,
+                      "values": [
+                        "mesos/service-proxy"
+                      ]
+                    },
+                    "limit": null
+                  }
+                },
+                {
+                  "name": "rack",
+                  "constraint": {
+                    "value": null,
+                    "limit": {
+                      "limit": 5
+                    }
+                  }
+                }
+              ],
+              "requestedPorts": [],
+              "mesosFetcherUris": [],
+              "taskLinks": {
+                "health": "http://%host%:%port:health%"
+              },
+              "contactEmail": null,
+              "executorConfig": null,
+              "metadata": [
+                {
+                  "key": "package",
+                  "value": "observe/absorber-release version:99 universion:v94 gitsha:f11d7725b4b503217472957c7e229bf62cb2b8f6 repo:https://git.twitter.biz/ro/source branch:origin/master"
+                },
+                {
+                  "key": "package",
+                  "value": "aurora/service-proxy version:25 universion:v23 gitsha:16634492bfd24f148b261fdc97b1b50e6dae511b repo:https://git.twitter.biz/ro/source branch:origin/master"
+                }
+              ],
+              "container": {
+                "mesos": {
+                  "image": null,
+                  "volumes": []
+                },
+                "docker": null
+              }
+            },
+            "assignedPorts": {
+              "health": 31928
+            },
+            "instanceId": 2
+          },
+          "status": 2,
+          "failureCount": 0,
+          "taskEvents": [
+            {
+              "timestamp": 1498504400566,
+              "status": 0,
+              "message": null,
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            },
+            {
+              "timestamp": 1498504400575,
+              "status": 9,
+              "message": null,
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            },
+            {
+              "timestamp": 1498504402136,
+              "status": 1,
+              "message": "Initializing sandbox.",
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            },
+            {
+              "timestamp": 1498504424582,
+              "status": 2,
+              "message": "Task is healthy.",
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            }
+          ],
+          "ancestorId": null
+        },
+        {
+          "assignedTask": {
+            "taskId": "mesos-prod-service-proxy-6-84475e02-08e7-440b-ab43-5e9e8daf7485",
+            "slaveId": "57327b65-464f-4f4d-9022-3921bf894125-S10893",
+            "slaveHost": "atla-abb-33-sr1.prod.twttr.net",
+            "task": {
+              "job": {
+                "role": "mesos",
+                "environment": "prod",
+                "name": "service-proxy"
+              },
+              "owner": {
+                "user": "jenkins"
+              },
+              "isService": true,
+              "numCpus": 0,
+              "ramMb": 0,
+              "diskMb": 0,
+              "priority": 0,
+              "maxTaskFailures": 1,
+              "production": true,
+              "tier": "preferred",
+              "resources": [
+                {
+                  "numCpus": 8,
+                  "ramMb": null,
+                  "diskMb": null,
+                  "namedPort": null,
+                  "numGpus": null
+                },
+                {
+                  "numCpus": null,
+                  "ramMb": null,
+                  "diskMb": 20480,
+                  "namedPort": null,
+                  "numGpus": null
+                },
+                {
+                  "numCpus": null,
+                  "ramMb": null,
+                  "diskMb": null,
+                  "namedPort": "health",
+                  "numGpus": null
+                },
+                {
+                  "numCpus": null,
+                  "ramMb": 20480,
+                  "diskMb": null,
+                  "namedPort": null,
+                  "numGpus": null
+                }
+              ],
+              "constraints": [
+                {
+                  "name": "host",
+                  "constraint": {
+                    "value": null,
+                    "limit": {
+                      "limit": 1
+                    }
+                  }
+                },
+                {
+                  "name": "dedicated",
+                  "constraint": {
+                    "value": {
+                      "negated": false,
+                      "values": [
+                        "mesos/service-proxy"
+                      ]
+                    },
+                    "limit": null
+                  }
+                },
+                {
+                  "name": "rack",
+                  "constraint": {
+                    "value": null,
+                    "limit": {
+                      "limit": 5
+                    }
+                  }
+                }
+              ],
+              "requestedPorts": [],
+              "mesosFetcherUris": [],
+              "taskLinks": {
+                "health": "http://%host%:%port:health%"
+              },
+              "contactEmail": null,
+              "executorConfig": null,
+              "metadata": [
+                {
+                  "key": "package",
+                  "value": "observe/absorber-release version:99 universion:v94 gitsha:f11d7725b4b503217472957c7e229bf62cb2b8f6 repo:https://git.twitter.biz/ro/source branch:origin/master"
+                },
+                {
+                  "key": "package",
+                  "value": "aurora/service-proxy version:25 universion:v23 gitsha:16634492bfd24f148b261fdc97b1b50e6dae511b repo:https://git.twitter.biz/ro/source branch:origin/master"
+                }
+              ],
+              "container": {
+                "mesos": {
+                  "image": null,
+                  "volumes": []
+                },
+                "docker": null
+              }
+            },
+            "assignedPorts": {
+              "health": 31463
+            },
+            "instanceId": 6
+          },
+          "status": 2,
+          "failureCount": 0,
+          "taskEvents": [
+            {
+              "timestamp": 1498504785879,
+              "status": 0,
+              "message": null,
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            },
+            {
+              "timestamp": 1498504785885,
+              "status": 9,
+              "message": null,
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            },
+            {
+              "timestamp": 1498504788322,
+              "status": 1,
+              "message": "Initializing sandbox.",
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            },
+            {
+              "timestamp": 1498504809808,
+              "status": 2,
+              "message": "Task is healthy.",
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            }
+          ],
+          "ancestorId": null
+        },
+        {
+          "assignedTask": {
+            "taskId": "mesos-prod-service-proxy-3-a5b94c55-c2b7-4f8f-9c35-fc7c50dcba97",
+            "slaveId": "347de088-5820-4e08-9166-11807dfb445e-S7561",
+            "slaveHost": "atla-abl-34-sr1.prod.twttr.net",
+            "task": {
+              "job": {
+                "role": "mesos",
+                "environment": "prod",
+                "name": "service-proxy"
+              },
+              "owner": {
+                "user": "jenkins"
+              },
+              "isService": true,
+              "numCpus": 0,
+              "ramMb": 0,
+              "diskMb": 0,
+              "priority": 0,
+              "maxTaskFailures": 1,
+              "production": true,
+              "tier": "preferred",
+              "resources": [
+                {
+                  "numCpus": 8,
+                  "ramMb": null,
+                  "diskMb": null,
+                  "namedPort": null,
+                  "numGpus": null
+                },
+                {
+                  "numCpus": null,
+                  "ramMb": null,
+                  "diskMb": 20480,
+                  "namedPort": null,
+                  "numGpus": null
+                },
+                {
+                  "numCpus": null,
+                  "ramMb": null,
+                  "diskMb": null,
+                  "namedPort": "health",
+                  "numGpus": null
+                },
+                {
+                  "numCpus": null,
+                  "ramMb": 20480,
+                  "diskMb": null,
+                  "namedPort": null,
+                  "numGpus": null
+                }
+              ],
+              "constraints": [
+                {
+                  "name": "host",
+                  "constraint": {
+                    "value": null,
+                    "limit": {
+                      "limit": 1
+                    }
+                  }
+                },
+                {
+                  "name": "dedicated",
+                  "constraint": {
+                    "value": {
+                      "negated": false,
+                      "values": [
+                        "mesos/service-proxy"
+                      ]
+                    },
+                    "limit": null
+                  }
+                },
+                {
+                  "name": "rack",
+                  "constraint": {
+                    "value": null,
+                    "limit": {
+                      "limit": 5
+                    }
+                  }
+                }
+              ],
+              "requestedPorts": [],
+              "mesosFetcherUris": [],
+              "taskLinks": {
+                "health": "http://%host%:%port:health%"
+              },
+              "contactEmail": null,
+              "executorConfig": null,
+              "metadata": [
+                {
+                  "key": "package",
+                  "value": "observe/absorber-release version:99 universion:v94 gitsha:f11d7725b4b503217472957c7e229bf62cb2b8f6 repo:https://git.twitter.biz/ro/source branch:origin/master"
+                },
+                {
+                  "key": "package",
+                  "value": "aurora/service-proxy version:25 universion:v23 gitsha:16634492bfd24f148b261fdc97b1b50e6dae511b repo:https://git.twitter.biz/ro/source branch:origin/master"
+                }
+              ],
+              "container": {
+                "mesos": {
+                  "image": null,
+                  "volumes": []
+                },
+                "docker": null
+              }
+            },
+            "assignedPorts": {
+              "health": 31414
+            },
+            "instanceId": 3
+          },
+          "status": 2,
+          "failureCount": 0,
+          "taskEvents": [
+            {
+              "timestamp": 1498504490114,
+              "status": 0,
+              "message": null,
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            },
+            {
+              "timestamp": 1498504490123,
+              "status": 9,
+              "message": null,
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            },
+            {
+              "timestamp": 1498504491665,
+              "status": 1,
+              "message": "Initializing sandbox.",
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            },
+            {
+              "timestamp": 1498504514086,
+              "status": 2,
+              "message": "Task is healthy.",
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            }
+          ],
+          "ancestorId": null
+        },
+        {
+          "assignedTask": {
+            "taskId": "mesos-prod-service-proxy-5-d4ee423c-2657-4305-b41f-be5b2ca27d43",
+            "slaveId": null,
+            "slaveHost": null,
+            "task": {
+              "job": {
+                "role": "mesos",
+                "environment": "prod",
+                "name": "service-proxy"
+              },
+              "owner": {
+                "user": "jenkins"
+              },
+              "isService": true,
+              "numCpus": 0,
+              "ramMb": 0,
+              "diskMb": 0,
+              "priority": 0,
+              "maxTaskFailures": 1,
+              "production": true,
+              "tier": "preferred",
+              "resources": [
+                {
+                  "numCpus": 8,
+                  "ramMb": null,
+                  "diskMb": null,
+                  "namedPort": null,
+                  "numGpus": null
+                },
+                {
+                  "numCpus": null,
+                  "ramMb": null,
+                  "diskMb": 20480,
+                  "namedPort": null,
+                  "numGpus": null
+                },
+                {
+                  "numCpus": null,
+                  "ramMb": null,
+                  "diskMb": null,
+                  "namedPort": "health",
+                  "numGpus": null
+                },
+                {
+                  "numCpus": null,
+                  "ramMb": 20480,
+                  "diskMb": null,
+                  "namedPort": null,
+                  "numGpus": null
+                }
+              ],
+              "constraints": [
+                {
+                  "name": "host",
+                  "constraint": {
+                    "value": null,
+                    "limit": {
+                      "limit": 1
+                    }
+                  }
+                },
+                {
+                  "name": "dedicated",
+                  "constraint": {
+                    "value": {
+                      "negated": false,
+                      "values": [
+                        "mesos/service-proxy"
+                      ]
+                    },
+                    "limit": null
+                  }
+                },
+                {
+                  "name": "rack",
+                  "constraint": {
+                    "value": null,
+                    "limit": {
+                      "limit": 5
+                    }
+                  }
+                }
+              ],
+              "requestedPorts": [],
+              "mesosFetcherUris": [],
+              "taskLinks": {
+                "health": "http://%host%:%port:health%"
+              },
+              "contactEmail": null,
+              "executorConfig": null,
+              "metadata": [
+                {
+                  "key": "package",
+                  "value": "observe/absorber-release version:99 universion:v94 gitsha:f11d7725b4b503217472957c7e229bf62cb2b8f6 repo:https://git.twitter.biz/ro/source branch:origin/master"
+                },
+                {
+                  "key": "package",
+                  "value": "aurora/service-proxy version:25 universion:v23 gitsha:16634492bfd24f148b261fdc97b1b50e6dae511b repo:https://git.twitter.biz/ro/source branch:origin/master"
+                }
+              ],
+              "container": {
+                "mesos": {
+                  "image": null,
+                  "volumes": []
+                },
+                "docker": null
+              }
+            },
+            "assignedPorts": {},
+            "instanceId": 5
+          },
+          "status": 0,
+          "failureCount": 0,
+          "taskEvents": [
+            {
+              "timestamp": 1498630184370,
+              "status": 0,
+              "message": "Rescheduled",
+              "scheduler": "atla-eon-30-sr1.prod.twttr.net"
+            }
+          ],
+          "ancestorId": "mesos-prod-service-proxy-5-d3fb5f9f-2464-434d-a4bc-c55de2bd6a71"
+        },
+        {
+          "assignedTask": {
+            "taskId": "mesos-prod-service-proxy-4-529dc157-db51-49eb-b5ff-0fc915410cf5",
+            "slaveId": "57327b65-464f-4f4d-9022-3921bf894125-S11109",
+            "slaveHost": "atla-aaw-05-sr1.prod.twttr.net",
+            "task": {
+              "job": {
+                "role": "mesos",
+                "environment": "prod",
+                "name": "service-proxy"
+              },
+              "owner": {
+                "user": "jenkins"
+              },
+              "isService": true,
+              "numCpus": 0,
+              "ramMb": 0,
+              "diskMb": 0,
+              "priority": 0,
+              "maxTaskFailures": 1,
+              "production": true,
+              "tier": "preferred",
+              "resources": [
+                {
+                  "numCpus": 8,
+                  "ramMb": null,
+                  "diskMb": null,
+                  "namedPort": null,
+                  "numGpus": null
+                },
+                {
+                  "numCpus": null,
+                  "ramMb": null,
+                  "diskMb": 20480,
+                  "namedPort": null,
+                  "numGpus": null
+                },
+                {
+                  "numCpus": null,
+                  "ramMb": null,
+                  "diskMb": null,
+                  "namedPort": "health",
+                  "numGpus": null
+                },
+                {
+                  "numCpus": null,
+                  "ramMb": 20480,
+                  "diskMb": null,
+                  "namedPort": null,
+                  "numGpus": null
+                }
+              ],
+              "constraints": [
+                {
+                  "name": "host",
+                  "constraint": {
+                    "value": null,
+                    "limit": {
+                      "limit": 1
+                    }
+                  }
+                },
+                {
+                  "name": "dedicated",
+                  "constraint": {
+                    "value": {
+                      "negated": false,
+                      "values": [
+                        "mesos/service-proxy"
+                      ]
+                    },
+                    "limit": null
+                  }
+                },
+                {
+                  "name": "rack",
+                  "constraint": {
+                    "value": null,
+                    "limit": {
+                      "limit": 5
+                    }
+                  }
+                }
+              ],
+              "requestedPorts": [],
+              "mesosFetcherUris": [],
+              "taskLinks": {
+                "health": "http://%host%:%port:health%"
+              },
+              "contactEmail": null,
+              "executorConfig": null,
+              "metadata": [
+                {
+                  "key": "package",
+                  "value": "observe/absorber-release version:99 universion:v94 gitsha:f11d7725b4b503217472957c7e229bf62cb2b8f6 repo:https://git.twitter.biz/ro/source branch:origin/master"
+                },
+                {
+                  "key": "package",
+                  "value": "aurora/service-proxy version:25 universion:v23 gitsha:16634492bfd24f148b261fdc97b1b50e6dae511b repo:https://git.twitter.biz/ro/source branch:origin/master"
+                }
+              ],
+              "container": {
+                "mesos": {
+                  "image": null,
+                  "volumes": []
+                },
+                "docker": null
+              }
+            },
+            "assignedPorts": {
+              "health": 31530
+            },
+            "instanceId": 4
+          },
+          "status": 2,
+          "failureCount": 0,
+          "taskEvents": [
+            {
+              "timestamp": 1498504587139,
+              "status": 0,
+              "message": null,
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            },
+            {
+              "timestamp": 1498504587148,
+              "status": 9,
+              "message": null,
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            },
+            {
+              "timestamp": 1498504588663,
+              "status": 1,
+              "message": "Initializing sandbox.",
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            },
+            {
+              "timestamp": 1498504611094,
+              "status": 2,
+              "message": "Task is healthy.",
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            }
+          ],
+          "ancestorId": null
+        },
+        {
+          "assignedTask": {
+            "taskId": "mesos-prod-service-proxy-1-f5293767-f11b-43ac-bc9b-d0da2148a03c",
+            "slaveId": "347de088-5820-4e08-9166-11807dfb445e-S6515",
+            "slaveHost": "atla-aaj-31-sr1.prod.twttr.net",
+            "task": {
+              "job": {
+                "role": "mesos",
+                "environment": "prod",
+                "name": "service-proxy"
+              },
+              "owner": {
+                "user": "jenkins"
+              },
+              "isService": true,
+              "numCpus": 0,
+              "ramMb": 0,
+              "diskMb": 0,
+              "priority": 0,
+              "maxTaskFailures": 1,
+              "production": true,
+              "tier": "preferred",
+              "resources": [
+                {
+                  "numCpus": 8,
+                  "ramMb": null,
+                  "diskMb": null,
+                  "namedPort": null,
+                  "numGpus": null
+                },
+                {
+                  "numCpus": null,
+                  "ramMb": null,
+                  "diskMb": 20480,
+                  "namedPort": null,
+                  "numGpus": null
+                },
+                {
+                  "numCpus": null,
+                  "ramMb": null,
+                  "diskMb": null,
+                  "namedPort": "health",
+                  "numGpus": null
+                },
+                {
+                  "numCpus": null,
+                  "ramMb": 20480,
+                  "diskMb": null,
+                  "namedPort": null,
+                  "numGpus": null
+                }
+              ],
+              "constraints": [
+                {
+                  "name": "host",
+                  "constraint": {
+                    "value": null,
+                    "limit": {
+                      "limit": 1
+                    }
+                  }
+                },
+                {
+                  "name": "dedicated",
+                  "constraint": {
+                    "value": {
+                      "negated": false,
+                      "values": [
+                        "mesos/service-proxy"
+                      ]
+                    },
+                    "limit": null
+                  }
+                },
+                {
+                  "name": "rack",
+                  "constraint": {
+                    "value": null,
+                    "limit": {
+                      "limit": 5
+                    }
+                  }
+                }
+              ],
+              "requestedPorts": [],
+              "mesosFetcherUris": [],
+              "taskLinks": {
+                "health": "http://%host%:%port:health%"
+              },
+              "contactEmail": null,
+              "executorConfig": null,
+              "metadata": [
+                {
+                  "key": "package",
+                  "value": "observe/absorber-release version:99 universion:v94 gitsha:f11d7725b4b503217472957c7e229bf62cb2b8f6 repo:https://git.twitter.biz/ro/source branch:origin/master"
+                },
+                {
+                  "key": "package",
+                  "value": "aurora/service-proxy version:25 universion:v23 gitsha:16634492bfd24f148b261fdc97b1b50e6dae511b repo:https://git.twitter.biz/ro/source branch:origin/master"
+                }
+              ],
+              "container": {
+                "mesos": {
+                  "image": null,
+                  "volumes": []
+                },
+                "docker": null
+              }
+            },
+            "assignedPorts": {
+              "health": 31480
+            },
+            "instanceId": 1
+          },
+          "status": 2,
+          "failureCount": 0,
+          "taskEvents": [
+            {
+              "timestamp": 1498504311249,
+              "status": 0,
+              "message": null,
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            },
+            {
+              "timestamp": 1498504311258,
+              "status": 9,
+              "message": null,
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            },
+            {
+              "timestamp": 1498504312761,
+              "status": 1,
+              "message": "Initializing sandbox.",
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            },
+            {
+              "timestamp": 1498504335171,
+              "status": 2,
+              "message": "Task is healthy.",
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            }
+          ],
+          "ancestorId": null
+        },
+        {
+          "assignedTask": {
+            "taskId": "mesos-prod-service-proxy-7-538a02be-d9d4-4232-9e9d-cd75fb15a3b6",
+            "slaveId": "347de088-5820-4e08-9166-11807dfb445e-S5860",
+            "slaveHost": "atla-abi-17-sr1.prod.twttr.net",
+            "task": {
+              "job": {
+                "role": "mesos",
+                "environment": "prod",
+                "name": "service-proxy"
+              },
+              "owner": {
+                "user": "jenkins"
+              },
+              "isService": true,
+              "numCpus": 0,
+              "ramMb": 0,
+              "diskMb": 0,
+              "priority": 0,
+              "maxTaskFailures": 1,
+              "production": true,
+              "tier": "preferred",
+              "resources": [
+                {
+                  "numCpus": 8,
+                  "ramMb": null,
+                  "diskMb": null,
+                  "namedPort": null,
+                  "numGpus": null
+                },
+                {
+                  "numCpus": null,
+                  "ramMb": null,
+                  "diskMb": 20480,
+                  "namedPort": null,
+                  "numGpus": null
+                },
+                {
+                  "numCpus": null,
+                  "ramMb": null,
+                  "diskMb": null,
+                  "namedPort": "health",
+                  "numGpus": null
+                },
+                {
+                  "numCpus": null,
+                  "ramMb": 20480,
+                  "diskMb": null,
+                  "namedPort": null,
+                  "numGpus": null
+                }
+              ],
+              "constraints": [
+                {
+                  "name": "host",
+                  "constraint": {
+                    "value": null,
+                    "limit": {
+                      "limit": 1
+                    }
+                  }
+                },
+                {
+                  "name": "dedicated",
+                  "constraint": {
+                    "value": {
+                      "negated": false,
+                      "values": [
+                        "mesos/service-proxy"
+                      ]
+                    },
+                    "limit": null
+                  }
+                },
+                {
+                  "name": "rack",
+                  "constraint": {
+                    "value": null,
+                    "limit": {
+                      "limit": 5
+                    }
+                  }
+                }
+              ],
+              "requestedPorts": [],
+              "mesosFetcherUris": [],
+              "taskLinks": {
+                "health": "http://%host%:%port:health%"
+              },
+              "contactEmail": null,
+              "executorConfig": null,
+              "metadata": [
+                {
+                  "key": "package",
+                  "value": "observe/absorber-release version:99 universion:v94 gitsha:f11d7725b4b503217472957c7e229bf62cb2b8f6 repo:https://git.twitter.biz/ro/source branch:origin/master"
+                },
+                {
+                  "key": "package",
+                  "value": "aurora/service-proxy version:25 universion:v23 gitsha:16634492bfd24f148b261fdc97b1b50e6dae511b repo:https://git.twitter.biz/ro/source branch:origin/master"
+                }
+              ],
+              "container": {
+                "mesos": {
+                  "image": null,
+                  "volumes": []
+                },
+                "docker": null
+              }
+            },
+            "assignedPorts": {
+              "health": 31960
+            },
+            "instanceId": 7
+          },
+          "status": 2,
+          "failureCount": 0,
+          "taskEvents": [
+            {
+              "timestamp": 1498504878382,
+              "status": 0,
+              "message": null,
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            },
+            {
+              "timestamp": 1498504878388,
+              "status": 9,
+              "message": null,
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            },
+            {
+              "timestamp": 1498504879979,
+              "status": 1,
+              "message": "Initializing sandbox.",
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            },
+            {
+              "timestamp": 1498504902712,
+              "status": 2,
+              "message": "Task is healthy.",
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            }
+          ],
+          "ancestorId": null
+        },
+        {
+          "assignedTask": {
+            "taskId": "mesos-prod-service-proxy-5-d3fb5f9f-2464-434d-a4bc-c55de2bd6a71",
+            "slaveId": "347de088-5820-4e08-9166-11807dfb445e-S5727",
+            "slaveHost": "atla-abc-33-sr1.prod.twttr.net",
+            "task": {
+              "job": {
+                "role": "mesos",
+                "environment": "prod",
+                "name": "service-proxy"
+              },
+              "owner": {
+                "user": "jenkins"
+              },
+              "isService": true,
+              "numCpus": 0,
+              "ramMb": 0,
+              "diskMb": 0,
+              "priority": 0,
+              "maxTaskFailures": 1,
+              "production": true,
+              "tier": "preferred",
+              "resources": [
+                {
+                  "numCpus": 8,
+                  "ramMb": null,
+                  "diskMb": null,
+                  "namedPort": null,
+                  "numGpus": null
+                },
+                {
+                  "numCpus": null,
+                  "ramMb": null,
+                  "diskMb": 20480,
+                  "namedPort": null,
+                  "numGpus": null
+                },
+                {
+                  "numCpus": null,
+                  "ramMb": null,
+                  "diskMb": null,
+                  "namedPort": "health",
+                  "numGpus": null
+                },
+                {
+                  "numCpus": null,
+                  "ramMb": 20480,
+                  "diskMb": null,
+                  "namedPort": null,
+                  "numGpus": null
+                }
+              ],
+              "constraints": [
+                {
+                  "name": "host",
+                  "constraint": {
+                    "value": null,
+                    "limit": {
+                      "limit": 1
+                    }
+                  }
+                },
+                {
+                  "name": "dedicated",
+                  "constraint": {
+                    "value": {
+                      "negated": false,
+                      "values": [
+                        "mesos/service-proxy"
+                      ]
+                    },
+                    "limit": null
+                  }
+                },
+                {
+                  "name": "rack",
+                  "constraint": {
+                    "value": null,
+                    "limit": {
+                      "limit": 5
+                    }
+                  }
+                }
+              ],
+              "requestedPorts": [],
+              "mesosFetcherUris": [],
+              "taskLinks": {
+                "health": "http://%host%:%port:health%"
+              },
+              "contactEmail": null,
+              "executorConfig": null,
+              "metadata": [
+                {
+                  "key": "package",
+                  "value": "observe/absorber-release version:99 universion:v94 gitsha:f11d7725b4b503217472957c7e229bf62cb2b8f6 repo:https://git.twitter.biz/ro/source branch:origin/master"
+                },
+                {
+                  "key": "package",
+                  "value": "aurora/service-proxy version:25 universion:v23 gitsha:16634492bfd24f148b261fdc97b1b50e6dae511b repo:https://git.twitter.biz/ro/source branch:origin/master"
+                }
+              ],
+              "container": {
+                "mesos": {
+                  "image": null,
+                  "volumes": []
+                },
+                "docker": null
+              }
+            },
+            "assignedPorts": {
+              "health": 31381
+            },
+            "instanceId": 5
+          },
+          "status": 7,
+          "failureCount": 0,
+          "taskEvents": [
+            {
+              "timestamp": 1498504696776,
+              "status": 0,
+              "message": null,
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            },
+            {
+              "timestamp": 1498504696837,
+              "status": 9,
+              "message": null,
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            },
+            {
+              "timestamp": 1498504698352,
+              "status": 1,
+              "message": "Initializing sandbox.",
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            },
+            {
+              "timestamp": 1498504720782,
+              "status": 2,
+              "message": "Task is healthy.",
+              "scheduler": "atla-eoj-11-sr1.prod.twttr.net"
+            },
+            {
+              "timestamp": 1498630184370,
+              "status": 7,
+              "message": "Agent atla-abc-33-sr1.prod.twttr.net removed: the agent unregistered",
+              "scheduler": "atla-eon-30-sr1.prod.twttr.net"
+            }
+          ],
+          "ancestorId": null
+        }
+      ]
+    },
+    "getJobsResult": null,
+    "getQuotaResult": null,
+    "listBackupsResult": null,
+    "startMaintenanceResult": null,
+    "drainHostsResult": null,
+    "queryRecoveryResult": null,
+    "maintenanceStatusResult": null,
+    "endMaintenanceResult": null,
+    "roleSummaryResult": null,
+    "jobSummaryResult": null,
+    "configSummaryResult": null,
+    "getPendingReasonResult": null,
+    "startJobUpdateResult": null,
+    "getJobUpdateSummariesResult": null,
+    "getJobUpdateDetailsResult": null,
+    "pulseJobUpdateResult": null,
+    "getJobUpdateDiffResult": null,
+    "getTierConfigResult": null
+  },
+  "details": []
+}

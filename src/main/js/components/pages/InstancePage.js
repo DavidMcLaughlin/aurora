@@ -1,32 +1,12 @@
 import React from 'react';
 
-import Breadcrumb from '../Breadcrumb';
-import { TwoColumnLayout } from '../Layout';
-import Loading from '../Loading';
-import TaskEvents, { TaskEventToggle } from '../TaskEvents';
+import ActiveTask from 'components/ActiveTask';
+import Breadcrumb from 'components/Breadcrumb';
+import { ContentPanel, TwoColumnLayout } from 'components/Layout';
+import Loading from 'components/Loading';
+import TaskEvents, { TaskEventToggle } from 'components/TaskEvents';
 
-import { isActive } from '../../util/TaskUtil';
-
-// TODO(dmcg): Move the slave host link into its own component.
-const TaskDetails = ({ task }) => (<div className='active-task-details'>
-  <div>
-    <h5>Task ID</h5>
-    <code>{task.assignedTask.taskId}</code>
-    <a href={`/structdump/task/${task.assignedTask.taskId}`}>view raw config</a>
-  </div>
-  <div>
-    <h5>Host</h5>
-    <code>{task.assignedTask.slaveHost}</code>
-    <a href={`http://${task.assignedTask.slaveHost}:1338/task/${task.assignedTask.taskId}`}>view sandbox</a>
-  </div>
-</div>);
-
-
-const TaskHistory = ({ task }) => (<div className='active-task-history'>
-  <h5 className='task-details-title'>STATUS HISTORY</h5>
-  <TaskEvents task={task} />
-</div>);
-
+import { isActive } from 'util/TaskUtil';
 
 const CompletedTask = ({ task }) => {
   return (<tr key={task.assignedTask.taskId}>
@@ -39,7 +19,6 @@ const CompletedTask = ({ task }) => {
     </td>
   </tr>);
 }
-
 
 const CompletedTasks = ({ tasks }) => (<table className='psuedo-table'>
   <tbody>
@@ -84,16 +63,7 @@ class InstancePage extends React.Component {
             <h2>Active Task</h2>
           </div>
         </div>
-        <div className='container'>
-          <div className='row'>
-            <div className='col-md-6'>
-              <TaskDetails task={activeTask} />
-            </div>
-            <div className='col-md-6'>
-              <TaskHistory task={activeTask} />
-            </div>
-          </div>
-        </div>
+        <ActiveTask task={activeTask} />
         <div className='secondary-title'>
           <div className='container'>
             <h2>Completed Tasks</h2>
@@ -102,7 +72,9 @@ class InstancePage extends React.Component {
         <div className='container'>
           <div className='row'>
             <div className='col-md-12'>
-              <CompletedTasks tasks={this.state.tasks.filter((t) => !isActive(t))} />
+              <ContentPanel>
+                <CompletedTasks tasks={this.state.tasks.filter((t) => !isActive(t))} />
+              </ContentPanel>
             </div>
           </div>
         </div>

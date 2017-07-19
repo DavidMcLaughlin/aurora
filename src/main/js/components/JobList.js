@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Icon from './Icon';
-import Panel from './Panel';
+import Icon from 'components/Icon';
+import Panel from 'components/Panel';
 
 const JobListItem = (props) => {
   const taskStats = [];

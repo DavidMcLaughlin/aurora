@@ -1,15 +1,15 @@
 import React from 'react';
 
-import Breadcrumb from '../Breadcrumb';
-import ConfigGroups from '../ConfigGroups';
-import InstanceViz from '../InstanceViz';
-import { Tabs, TwoColumnLayout } from '../Layout';
-import Loading from '../Loading';
-import TaskList from '../TaskList';
-import UpdateList from '../UpdateList';
+import Breadcrumb from 'components/Breadcrumb';
+import ConfigGroups from 'components/ConfigGroups';
+import InstanceViz from 'components/InstanceViz';
+import { Tabs, TwoColumnLayout } from 'components/Layout';
+import Loading from 'components/Loading';
+import TaskList from 'components/TaskList';
+import UpdateList from 'components/UpdateList';
 
-import { isActive } from '../../util/TaskUtil';
-import { sort } from '../../util/Utils';
+import { isActive } from 'util/TaskUtil';
+import { sort } from 'util/Utils';
 
 export const TaskTabs = ({ active, complete, history }) => (<div>
   <div className='flex-panel flex-panel-title'>
@@ -44,6 +44,7 @@ export default class JobPage extends React.Component {
 
     const that = this;
     this.props.api.getConfigSummary(key, (response) => {
+      console.log(JSON.stringify(response, null, 2));
       that.setState({ configSummary: response.result.configSummaryResult.summary.groups });
     });
   }
@@ -57,12 +58,14 @@ export default class JobPage extends React.Component {
 
     const that = this;
     this.props.api.getTasksWithoutConfigs(query, (response) => {
+      console.log(JSON.stringify(response, null, 2));
       that.setState({
         cluster: response.serverInfo.clusterName,
         tasks: response.result.scheduleStatusResult.tasks
       });
     });
     this.props.api.getPendingReason(query, (response) => {
+      console.log(JSON.stringify(response, null, 2));
       that.setState({ pendingReasons: response.result.getPendingReasonResult.reasons });
     });
   }
@@ -73,6 +76,7 @@ export default class JobPage extends React.Component {
     query.jobKey = new JobKey({role, environment, name});
     const that = this;
     this.props.api.getJobUpdateSummaries(query, (response) => {
+      console.log(JSON.stringify(response, null, 2));
       that.setState({ updates: response.result.getJobUpdateSummariesResult.updateSummaries });
     });
   }

@@ -1,0 +1,339 @@
+{
+  "responseCode": 1,
+  "serverInfo": {
+    "clusterName": "atla",
+    "statsUrlPrefix": "https://observe.twitter.biz/viz/dashboards/mesos-container-stats?zone=atla#source=sd."
+  },
+  "result": {
+    "populateJobResult": null,
+    "scheduleStatusResult": null,
+    "getJobsResult": null,
+    "getQuotaResult": null,
+    "listBackupsResult": null,
+    "startMaintenanceResult": null,
+    "drainHostsResult": null,
+    "queryRecoveryResult": null,
+    "maintenanceStatusResult": null,
+    "endMaintenanceResult": null,
+    "roleSummaryResult": null,
+    "jobSummaryResult": null,
+    "configSummaryResult": null,
+    "getPendingReasonResult": null,
+    "startJobUpdateResult": null,
+    "getJobUpdateSummariesResult": null,
+    "getJobUpdateDetailsResult": {
+      "details": null,
+      "detailsList": [
+        {
+          "update": {
+            "summary": {
+              "key": {
+                "job": {
+                  "role": "mesos",
+                  "environment": "prod",
+                  "name": "service-proxy"
+                },
+                "id": "0a7986fb-f9df-4ee9-8a05-15344b13abbc"
+              },
+              "user": "jhunter",
+              "state": {
+                "status": 5,
+                "createdTimestampMs": 1498501387829,
+                "lastModifiedTimestampMs": 1498503596676
+              },
+              "metadata": [
+                {
+                  "key": "com.twitter.aurora.deployservice.target_id",
+                  "value": "aurora/service-proxy/19/atla/mesos/prod/service-proxy"
+                }
+              ]
+            },
+            "instructions": {
+              "initialState": [
+                {
+                  "task": {
+                    "job": {
+                      "role": "mesos",
+                      "environment": "prod",
+                      "name": "service-proxy"
+                    },
+                    "owner": {
+                      "user": "jdorlus"
+                    },
+                    "isService": true,
+                    "numCpus": 8,
+                    "ramMb": 20480,
+                    "diskMb": 20480,
+                    "priority": 0,
+                    "maxTaskFailures": 1,
+                    "production": true,
+                    "tier": "preferred",
+                    "resources": [
+                      {
+                        "numCpus": 8,
+                        "ramMb": null,
+                        "diskMb": null,
+                        "namedPort": null,
+                        "numGpus": null
+                      },
+                      {
+                        "numCpus": null,
+                        "ramMb": null,
+                        "diskMb": 20480,
+                        "namedPort": null,
+                        "numGpus": null
+                      },
+                      {
+                        "numCpus": null,
+                        "ramMb": null,
+                        "diskMb": null,
+                        "namedPort": "health",
+                        "numGpus": null
+                      },
+                      {
+                        "numCpus": null,
+                        "ramMb": 20480,
+                        "diskMb": null,
+                        "namedPort": null,
+                        "numGpus": null
+                      }
+                    ],
+                    "constraints": [
+                      {
+                        "name": "host",
+                        "constraint": {
+                          "value": null,
+                          "limit": {
+                            "limit": 1
+                          }
+                        }
+                      },
+                      {
+                        "name": "dedicated",
+                        "constraint": {
+                          "value": {
+                            "negated": false,
+                            "values": [
+                              "mesos/service-proxy"
+                            ]
+                          },
+                          "limit": null
+                        }
+                      }
+                    ],
+                    "requestedPorts": [
+                      "health"
+                    ],
+                    "mesosFetcherUris": [],
+                    "taskLinks": {
+                      "health": "http://%host%:%port:health%"
+                    },
+                    "contactEmail": null,
+                    "executorConfig": {
+                      "name": "AuroraExecutor",
+                      "data": "{\"environment\": \"prod\", \"health_check_config\": {\"health_checker\": {\"http\": {\"expected_response_code\": 0, \"endpoint\": \"/health\", \"expected_response\": \"ok\"}}, \"min_consecutive_successes\": 1, \"initial_interval_secs\": 15.0, \"max_consecutive_failures\": 0, \"timeout_secs\": 1.0, \"interval_secs\": 10.0}, \"name\": \"service-proxy\", \"service\": true, \"max_task_failures\": 1, \"cron_collision_policy\": \"KILL_EXISTING\", \"enable_hooks\": true, \"cluster\": \"atla\", \"task\": {\"processes\": [{\"daemon\": false, \"name\": \"stage_service-proxy\", \"ephemeral\": false, \"max_failures\": 1, \"min_duration\": 5, \"cmdline\": \"/usr/local/bin/package_cache e80c72baf3a3fc21577e25b3c7f372ec hftp://hadoop-rt2-nn.atla.twitter.com:50070/user/mesos/packer/atla-prod/packagedata/e8/0c72baf3a3fc21577e25b3c7f372ec proxy.zip\\n\\nfunction _delete_pkg() { rm -f proxy.zip; }\\n\\nif [[ \\\"proxy.zip\\\" == *\\\".tar\\\" ]]; then\\n  tar -xf proxy.zip && _delete_pkg\\nelif [[ \\\"proxy.zip\\\" == *\\\".tar.gz\\\" || \\\"proxy.zip\\\" == *\\\".tgz\\\" ]]; then\\n  tar -xzf proxy.zip && _delete_pkg\\nelif [[ \\\"proxy.zip\\\" == *\\\".tar.bz2\\\" || \\\"proxy.zip\\\" == *\\\".tbz2\\\" ]]; then\\n  tar -xjf proxy.zip && _delete_pkg\\nelif [[ \\\"proxy.zip\\\" == *\\\".zip\\\" ]]; then\\n  unzip -qo proxy.zip && _delete_pkg\\nelif [[ \\\"proxy.zip\\\" == *\\\".shar\\\" ]]; then\\n  sh proxy.zip && _delete_pkg\\nfi\\n\", \"final\": false}, {\"daemon\": false, \"name\": \"proxy\", \"ephemeral\": false, \"max_failures\": 1, \"min_duration\": 5, \"cmdline\": \"mkdir logs && /usr/lib/jvm/java-1.7.0-openjdk/bin/java -server -Xms7g -Xmx7g       -XX:+UseConcMarkSweepGC       -XX:+UseParNewGC       -XX:ParallelGCThreads=20       -XX:+PrintClassHistogram       -Xloggc:logs/gc.log       -Djava.util.logging.config.class=com.twitter.common.util.logging.ResourceLoggingConfigurator       -Djava.util.logging.config.resource=/com/twitter/proxy/logging.properties       -jar proxy.jar       -http_endpoint_port=43002       -https_endpoint_port=43003       -tls_certificate_path=/etc/twkeys/root/ssl/wild.service.atla.twitter.biz-e959a90fb8b9b69659ac4bd959d144b.chain       -tls_key_path=/etc/twkeys/root/ssl/wild.service.atla.twitter.biz-e959a90fb8b9b69659ac4bd959d144b.key       -http_port={{thermos.ports[health]}}       -config_file=config/proxy.atla.yml       -max_binary_connections_per_service=30000\", \"final\": false}, {\"daemon\": true, \"name\": \"stats_science_http\", \"ephemeral\": true, \"max_failures\": 10, \"min_duration\": 5, \"cmdline\": \"flock -x -w 11.0 absorber.lock -c \\\"if [[ ! -x absorber ]]; then /usr/local/bin/package_cache 568150c00b5b3361637db82d99e90cd6 hftp://hadoop-rt2-nn.atla.twitter.com:50070/user/mesos/packer/atla-prod/packagedata/56/8150c00b5b3361637db82d99e90cd6 absorber && for i in 1 2 3; do if [[ ! -e absorber ]]; then sleep 5 && /usr/local/bin/package_cache 568150c00b5b3361637db82d99e90cd6 hftp://hadoop-rt2-nn.atla.twitter.com:50070/user/mesos/packer/atla-prod/packagedata/56/8150c00b5b3361637db82d99e90cd6 absorber; else break; fi; done && chmod +x absorber && ( ./absorber -help >/dev/null 2>&1 || /bin/true ); fi\\\" && ./absorber -pull -env=prod -job=service-proxy -logfile=absorber_science_http.log -pulllibrary=science -pullport={{thermos.ports[http]}} -role=mesos -source={{mesos.instance}} -zone=atla \", \"final\": false}], \"name\": \"proxy\", \"finalization_wait\": 30, \"max_failures\": 1, \"max_concurrency\": 0, \"resources\": {\"gpu\": 0, \"disk\": 21474836480, \"ram\": 21474836480, \"cpu\": 8.0}, \"constraints\": [{\"order\": [\"stage_service-proxy\", \"proxy\"]}]}, \"production\": true, \"role\": \"mesos\", \"tier\": \"preferred\", \"announce\": {\"primary_port\": \"http\", \"portmap\": {\"aurora\": \"health\", \"http\": \"health\"}}, \"task_links\": {\"health\": \"http://%host%:%port:health%/health\", \"http\": \"http://%host%:%port:health%\"}, \"lifecycle\": {\"http\": {\"graceful_shutdown_endpoint\": \"/quitquitquit\", \"port\": \"health\", \"shutdown_endpoint\": \"/abortabortabort\"}}, \"constraints\": {\"dedicated\": \"mesos/service-proxy\", \"host\": \"limit:1\"}, \"priority\": 0}"
+                    },
+                    "metadata": [
+                      {
+                        "key": "package",
+                        "value": "observe/absorber-release version:95 universion:v90 gitsha:f1d76c12d08a8a9b8e3d77ddc5bf877fe266bf45 repo:https://git.twitter.biz/ro/source branch:origin/master"
+                      },
+                      {
+                        "key": "package",
+                        "value": "aurora/service-proxy version:6 universion:v5 gitsha:3960e2a6ce229097115711ade537950fd56fc7eb branch:origin/service-proxy_R3"
+                      }
+                    ],
+                    "container": {
+                      "mesos": {
+                        "image": null,
+                        "volumes": []
+                      },
+                      "docker": null
+                    }
+                  },
+                  "instances": [
+                    {
+                      "first": 0,
+                      "last": 7
+                    }
+                  ]
+                }
+              ],
+              "desiredState": {
+                "task": {
+                  "job": {
+                    "role": "mesos",
+                    "environment": "prod",
+                    "name": "service-proxy"
+                  },
+                  "owner": {
+                    "user": "jenkins"
+                  },
+                  "isService": true,
+                  "numCpus": 0,
+                  "ramMb": 0,
+                  "diskMb": 0,
+                  "priority": 0,
+                  "maxTaskFailures": 1,
+                  "production": true,
+                  "tier": "preferred",
+                  "resources": [
+                    {
+                      "numCpus": 8,
+                      "ramMb": null,
+                      "diskMb": null,
+                      "namedPort": null,
+                      "numGpus": null
+                    },
+                    {
+                      "numCpus": null,
+                      "ramMb": null,
+                      "diskMb": 20480,
+                      "namedPort": null,
+                      "numGpus": null
+                    },
+                    {
+                      "numCpus": null,
+                      "ramMb": null,
+                      "diskMb": null,
+                      "namedPort": "health",
+                      "numGpus": null
+                    },
+                    {
+                      "numCpus": null,
+                      "ramMb": 20480,
+                      "diskMb": null,
+                      "namedPort": null,
+                      "numGpus": null
+                    }
+                  ],
+                  "constraints": [
+                    {
+                      "name": "host",
+                      "constraint": {
+                        "value": null,
+                        "limit": {
+                          "limit": 1
+                        }
+                      }
+                    },
+                    {
+                      "name": "dedicated",
+                      "constraint": {
+                        "value": {
+                          "negated": false,
+                          "values": [
+                            "mesos/service-proxy"
+                          ]
+                        },
+                        "limit": null
+                      }
+                    },
+                    {
+                      "name": "rack",
+                      "constraint": {
+                        "value": null,
+                        "limit": {
+                          "limit": 5
+                        }
+                      }
+                    }
+                  ],
+                  "requestedPorts": [],
+                  "mesosFetcherUris": [],
+                  "taskLinks": {
+                    "health": "http://%host%:%port:health%"
+                  },
+                  "contactEmail": null,
+                  "executorConfig": {
+                    "name": "AuroraExecutor",
+                    "data": "{\"environment\": \"prod\", \"health_check_config\": {\"health_checker\": {\"http\": {\"expected_response_code\": 0, \"endpoint\": \"/health\", \"expected_response\": \"ok\"}}, \"min_consecutive_successes\": 1, \"initial_interval_secs\": 15.0, \"max_consecutive_failures\": 0, \"timeout_secs\": 1.0, \"interval_secs\": 10.0}, \"name\": \"service-proxy\", \"service\": true, \"max_task_failures\": 1, \"cron_collision_policy\": \"KILL_EXISTING\", \"enable_hooks\": true, \"cluster\": \"atla\", \"task\": {\"processes\": [{\"daemon\": false, \"name\": \"stage_service-proxy\", \"ephemeral\": false, \"max_failures\": 1, \"min_duration\": 5, \"cmdline\": \"/usr/local/bin/package_cache 855a441a2722e5ba6e73c8c3d00f986e hftp://hadoop-rt2-nn.atla.twitter.com:50070/user/mesos/packer/atla-prod/packagedata/85/5a441a2722e5ba6e73c8c3d00f986e proxy.zip\\n\\nfunction _delete_pkg() { rm -f proxy.zip; }\\n\\nif [[ \\\"proxy.zip\\\" == *\\\".tar\\\" ]]; then\\n  tar -xf proxy.zip && _delete_pkg\\nelif [[ \\\"proxy.zip\\\" == *\\\".tar.gz\\\" || \\\"proxy.zip\\\" == *\\\".tgz\\\" ]]; then\\n  tar -xzf proxy.zip && _delete_pkg\\nelif [[ \\\"proxy.zip\\\" == *\\\".tar.bz2\\\" || \\\"proxy.zip\\\" == *\\\".tbz2\\\" ]]; then\\n  tar -xjf proxy.zip && _delete_pkg\\nelif [[ \\\"proxy.zip\\\" == *\\\".zip\\\" ]]; then\\n  unzip -qo proxy.zip && _delete_pkg\\nelif [[ \\\"proxy.zip\\\" == *\\\".shar\\\" ]]; then\\n  sh proxy.zip && _delete_pkg\\nfi\\n\", \"final\": false}, {\"daemon\": false, \"name\": \"service-proxy\", \"ephemeral\": false, \"max_failures\": 1, \"min_duration\": 5, \"cmdline\": \"\\nexport AURORA_JOB_NAME=service-proxy      PATH=/usr/lib/jvm/java-1.8.0-twitter/bin:$PATH            JAVA_HOME=/usr/lib/jvm/java-1.8.0-twitter      __JVM_OPTIONS=\\\"-Xmx20112M -Xms20112M -Xmn10056M\\n                    -XX:MaxMetaspaceSize=128M -XX:MetaspaceSize=128M  \\n                   -XX:ParallelGCThreads=8 -Xloggc:gc.log\\n                   -XX:+CMSScavengeBeforeRemark -XX:TargetSurvivorRatio=90 -XX:+PrintCommandLineFlags -verbosegc -XX:NumberOfGCLogFiles=2 -XX:GCLogFileSize=64M -XX:+UseGCLogFileRotation -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -XX:+PrintGCCause -XX:+PrintPromotionFailure -XX:+PrintTenuringDistribution -XX:+PrintHeapAtGC\\n                   -XX:+HeapDumpOnOutOfMemoryError\\n                   -Dmesos.resources.cpu=8\\n                   -XX:+UseConcMarkSweepGC -agentlib:perfagent\\n                   -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -XX:ParallelGCThreads=20 -XX:+PrintClassHistogram -Xloggc:logs/gc.log -Djava.util.logging.config.class=com.twitter.common.util.logging.ResourceLoggingConfigurator -Djava.util.logging.config.resource=/com/twitter/proxy/logging.properties -XX:CICompilerCount=7  -Daurora.instanceKey=atla/mesos/prod/service-proxy/{{mesos.instance}}\\\"\\necho $$ > service-proxy-jvmprocess.pid &&\\necho $$ > service-proxy-jvmcollector.pid &&\\nexec /usr/lib/jvm/java-1.8.0-twitter/bin/java $__JVM_OPTIONS -jar proxy.jar -http_endpoint_port=43002 -https_endpoint_port=43003 -tls_certificate_path=/etc/twkeys/root/ssl/wild.service.atla.twitter.biz-e959a90fb8b9b69659ac4bd959d144b.chain -tls_key_path=/etc/twkeys/root/ssl/wild.service.atla.twitter.biz-e959a90fb8b9b69659ac4bd959d144b-pkcs8.key -http_port={{thermos.ports[health]}} -config_file=config/proxy.atla.yml -max_binary_connections_per_service=30000\", \"final\": false}, {\"daemon\": true, \"name\": \"stats_science_http\", \"ephemeral\": true, \"max_failures\": 10, \"min_duration\": 5, \"cmdline\": \"CLUSTER=atla && case $CLUSTER in atla*) ZONE=atla;; smf1*) ZONE=smf1;; *) ZONE=$CLUSTER;; esac && case $ZONE in atla) MODE=\\\"\\\" RELAYS=\\\"\\\";; atlb) MODE=\\\"-mode=external\\\" RELAYS=\\\"-relays=cuckoo-relay-atla.twitter.biz\\\";; smf1) MODE=\\\"\\\" RELAYS=\\\"\\\";; *) MODE=\\\"-mode=oauth_pop\\\" RELAYS=\\\"-relays=monitoring.twitter.biz\\\";; esac && flock -x -w 11.0 absorber.lock -c \\\"if [[ ! -x absorber ]]; then /usr/local/bin/package_cache 2b6bbbfdaed15722b4b275f15731f03c hftp://hadoop-rt2-nn.atla.twitter.com:50070/user/mesos/packer/atla-prod/packagedata/2b/6bbbfdaed15722b4b275f15731f03c absorber && for i in 1 2 3; do if [[ ! -e absorber ]]; then sleep 5 && /usr/local/bin/package_cache 2b6bbbfdaed15722b4b275f15731f03c hftp://hadoop-rt2-nn.atla.twitter.com:50070/user/mesos/packer/atla-prod/packagedata/2b/6bbbfdaed15722b4b275f15731f03c absorber; else break; fi; done && chmod +x absorber && ( ./absorber -help >/dev/null 2>&1 || /bin/true ); fi\\\" && ./absorber -pull -env=prod -job=service-proxy -logfile=absorber_science_http.log ${MODE} -pulllibrary=science -pullport={{thermos.ports[http]}} -role=mesos -source={{mesos.instance}} ${RELAYS} -zone=${ZONE} \", \"final\": false}], \"name\": \"proxy\", \"finalization_wait\": 30, \"max_failures\": 1, \"max_concurrency\": 0, \"resources\": {\"gpu\": 0, \"disk\": 21474836480, \"ram\": 21474836480, \"cpu\": 8.0}, \"constraints\": [{\"order\": [\"stage_service-proxy\", \"service-proxy\"]}]}, \"production\": true, \"role\": \"mesos\", \"tier\": \"preferred\", \"announce\": {\"primary_port\": \"http\", \"portmap\": {\"aurora\": \"health\", \"http\": \"health\"}}, \"task_links\": {\"health\": \"http://%host%:%port:health%/health\", \"http\": \"http://%host%:%port:health%\"}, \"lifecycle\": {\"http\": {\"graceful_shutdown_endpoint\": \"/quitquitquit\", \"port\": \"health\", \"shutdown_endpoint\": \"/abortabortabort\"}}, \"constraints\": {\"dedicated\": \"mesos/service-proxy\", \"host\": \"limit:1\", \"rack\": \"limit:5\"}, \"priority\": 0}"
+                  },
+                  "metadata": [
+                    {
+                      "key": "package",
+                      "value": "observe/absorber-release version:99 universion:v94 gitsha:f11d7725b4b503217472957c7e229bf62cb2b8f6 repo:https://git.twitter.biz/ro/source branch:origin/master"
+                    },
+                    {
+                      "key": "package",
+                      "value": "aurora/service-proxy version:25 universion:v23 gitsha:16634492bfd24f148b261fdc97b1b50e6dae511b repo:https://git.twitter.biz/ro/source branch:origin/master"
+                    }
+                  ],
+                  "container": {
+                    "mesos": {
+                      "image": null,
+                      "volumes": []
+                    },
+                    "docker": null
+                  }
+                },
+                "instances": [
+                  {
+                    "first": 0,
+                    "last": 7
+                  }
+                ]
+              },
+              "settings": {
+                "updateGroupSize": 1,
+                "maxPerInstanceFailures": 10,
+                "maxFailedInstances": 0,
+                "minWaitInInstanceRunningMs": 60000,
+                "rollbackOnFailure": true,
+                "updateOnlyTheseInstances": [],
+                "waitForBatchCompletion": false,
+                "blockIfNoPulsesAfterMs": 0
+              }
+            }
+          },
+          "updateEvents": [
+            {
+              "status": 0,
+              "timestampMs": 1498501387829,
+              "user": "jhunter",
+              "message": "Started job update from workflow: aurora/service-proxy/19"
+            },
+            {
+              "status": 1,
+              "timestampMs": 1498503521800,
+              "user": null,
+              "message": "Latest failure: instance 0 exited."
+            },
+            {
+              "status": 5,
+              "timestampMs": 1498503596676,
+              "user": null,
+              "message": null
+            }
+          ],
+          "instanceEvents": [
+            {
+              "instanceId": 0,
+              "timestampMs": 1498501387836,
+              "action": 3
+            },
+            {
+              "instanceId": 0,
+              "timestampMs": 1498503521800,
+              "action": 5
+            },
+            {
+              "instanceId": 0,
+              "timestampMs": 1498503521807,
+              "action": 4
+            },
+            {
+              "instanceId": 0,
+              "timestampMs": 1498503596675,
+              "action": 2
+            }
+          ]
+        }
+      ]
+    },
+    "pulseJobUpdateResult": null,
+    "getJobUpdateDiffResult": null,
+    "getTierConfigResult": null
+  },
+  "details": []
+}

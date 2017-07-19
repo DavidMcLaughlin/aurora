@@ -10,3 +10,14 @@ export const getClassForScheduleStatus = (status) => {
   }
   return 'system';
 }
+
+export const getClassForUpdateStatus = (status) => {
+  if (Thrift.OKAY_UPDATE_STATUS.includes(status)) {
+    return 'okay';
+  } else if (Thrift.WARNING_UPDATE_STATUS.includes(status)) {
+    return 'attention';
+  } else if(Thrift.ERROR_UPDATE_STATUS.includes(status)) {
+    return 'error';
+  }
+  return 'in-progress';
+}

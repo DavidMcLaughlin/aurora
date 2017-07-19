@@ -1,0 +1,77 @@
+{
+  "responseCode": 1,
+  "serverInfo": {
+    "clusterName": "atla",
+    "statsUrlPrefix": "https://observe.twitter.biz/viz/dashboards/mesos-container-stats?zone=atla#source=sd."
+  },
+  "result": {
+    "populateJobResult": null,
+    "scheduleStatusResult": null,
+    "getJobsResult": null,
+    "getQuotaResult": null,
+    "listBackupsResult": null,
+    "startMaintenanceResult": null,
+    "drainHostsResult": null,
+    "queryRecoveryResult": null,
+    "maintenanceStatusResult": null,
+    "endMaintenanceResult": null,
+    "roleSummaryResult": null,
+    "jobSummaryResult": null,
+    "configSummaryResult": null,
+    "getPendingReasonResult": null,
+    "startJobUpdateResult": null,
+    "getJobUpdateSummariesResult": {
+      "updateSummaries": [
+        {
+          "key": {
+            "job": {
+              "role": "mesos",
+              "environment": "prod",
+              "name": "service-proxy"
+            },
+            "id": "1d34e49f-afec-4722-adba-f33c63b7f2db"
+          },
+          "user": "jhunter",
+          "state": {
+            "status": 4,
+            "createdTimestampMs": 1498504226323,
+            "lastModifiedTimestampMs": 1498504962744
+          },
+          "metadata": [
+            {
+              "key": "com.twitter.aurora.deployservice.target_id",
+              "value": "aurora/service-proxy/19/atla/mesos/prod/service-proxy"
+            }
+          ]
+        },
+        {
+          "key": {
+            "job": {
+              "role": "mesos",
+              "environment": "prod",
+              "name": "service-proxy"
+            },
+            "id": "0a7986fb-f9df-4ee9-8a05-15344b13abbc"
+          },
+          "user": "jhunter",
+          "state": {
+            "status": 5,
+            "createdTimestampMs": 1498501387829,
+            "lastModifiedTimestampMs": 1498503596676
+          },
+          "metadata": [
+            {
+              "key": "com.twitter.aurora.deployservice.target_id",
+              "value": "aurora/service-proxy/19/atla/mesos/prod/service-proxy"
+            }
+          ]
+        }
+      ]
+    },
+    "getJobUpdateDetailsResult": null,
+    "pulseJobUpdateResult": null,
+    "getJobUpdateDiffResult": null,
+    "getTierConfigResult": null
+  },
+  "details": []
+}

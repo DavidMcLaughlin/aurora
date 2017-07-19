@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Breadcrumb from '../Breadcrumb';
-import Loading from '../Loading';
-import RoleList from '../RoleList';
+import Breadcrumb from 'components/Breadcrumb';
+import Loading from 'components/Loading';
+import RoleList from 'components/RoleList';
 
 export default class HomePage extends React.Component {
   constructor(props) {
