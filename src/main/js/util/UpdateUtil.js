@@ -5,6 +5,10 @@ export const isSuccessfulUpdate = (update) => {
   return update.update.summary.state.status === JobUpdateStatus.ROLLED_FORWARD;
 };
 
+export const isInProgressUpdate = (update) => {
+  return update.update.summary.state.status === JobUpdateStatus.ROLLING_FORWARD;
+};
+
 const processInstanceIdsFromRanges = (ranges, fn) => {
   ranges.forEach((r) => {
     for (let i = r.first; i <= r.last; i++) {
